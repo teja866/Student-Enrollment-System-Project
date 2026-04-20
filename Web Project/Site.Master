@@ -1,0 +1,309 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Web_Project.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Student Enrollment System</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- Premium global theme for master -->
+    <style>
+        :root {
+            --bg-main:       #000000;
+            --bg-nav:        rgba(10, 10, 10, 0.82);
+            --bg-card:       #0a0a0a;
+            --text-main:     #ffffff;
+            --text-muted:    #a1a1aa;
+
+            --border-color:  rgba(255, 255, 255, 0.08);
+            --border-hover:  rgba(255, 255, 255, 0.20);
+
+            --accent:        #818cf8;
+            --accent-2:      #a855f7;
+            --accent-glow:   rgba(99, 102, 241, 0.35);
+
+            --radius-md:     12px;
+            --radius-lg:     16px;
+
+            --transition:    all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        html, body {
+            background: var(--bg-main) !important;
+            color: var(--text-main) !important;
+            font-family: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: var(--bg-nav) !important;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1100;
+        }
+
+        .navbar::after {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; bottom: -1px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
+            opacity: 0.9;
+        }
+
+        .navbar-brand {
+            font-weight: 700 !important;
+            letter-spacing: -0.01em;
+            color: #ffffff !important;
+            position: relative;
+            padding-left: 2px;
+            transition: var(--transition);
+        }
+
+        .navbar-brand:hover {
+            color: #e9e9ff !important;
+            text-shadow: 0 0 16px rgba(129, 140, 248, 0.35);
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-muted) !important;
+            font-size: 0.92rem;
+            font-weight: 500;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            padding: 8px 12px !important;
+            margin-right: 4px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        /* Popular hover animation (lift + glow) */
+        .navbar-nav .nav-link:hover {
+            color: #ffffff !important;
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border-color);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Active-ish click feedback */
+        .navbar-nav .nav-link:active {
+            transform: translateY(0);
+        }
+
+        .navbar-toggler {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+            padding: 0.35rem 0.55rem;
+            transition: var(--transition);
+        }
+
+        .navbar-toggler:hover {
+            border-color: var(--border-hover) !important;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .navbar-text {
+            color: #d4d4d8 !important;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            padding: 6px 12px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* ===== MAIN CONTENT WRAPPER ===== */
+        .body-content {
+            margin-top: 22px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Global divider style */
+        .body-content > hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 24px 0 18px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        footer p {
+            margin: 0;
+            letter-spacing: 0.01em;
+        }
+
+        /* ===== GLOBAL TABLE LOOK (for all GridViews) ===== */
+        .table,
+        table {
+            color: var(--text-main);
+        }
+
+        /* Optional scrollbar polish */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0b0b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 999px;
+            border: 2px solid #0b0b0b;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3a3a3a;
+        }
+
+        /* Responsive nav spacing */
+        @media (max-width: 991px) {
+            .navbar-nav .nav-link {
+                margin-bottom: 6px;
+            }
+
+            .navbar-text {
+                margin-top: 8px;
+                display: inline-block;
+            }
+        }
+
+        /* Reduced motion accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .navbar-brand,
+            .navbar-nav .nav-link,
+            .navbar-toggler {
+                transition: none !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form runat="server">
+        
+        <!-- Script Manager -->
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container">
+                
+                <!-- LOGO -->
+                <a class="navbar-brand" runat="server" href="~/Dashboard.aspx">
+                    Student System
+                </a>
+
+                <!-- TOGGLE -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- MENU -->
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Dashboard.aspx">Dashboard</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Enrollment.aspx">Enrollment</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/AddDrop.aspx">Add/Drop</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Enquiry.aspx">Enquiry</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Payment.aspx">Payment</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Statement.aspx">Statement</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Profile.aspx">Profile</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Login.aspx">Logout</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/About.aspx">About</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- USER NAME -->
+                    <span class="navbar-text text-white">
+                        <asp:Label ID="lblUser" runat="server"></asp:Label>
+                    </span>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+            <hr />
+
+            <!-- FOOTER -->
+            <footer>
+                <p>&copy; 2026 - Student Enrollment System</p>
+            </footer>
+        </div>
+
+    </form>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Teja\\source\\repos\\Web Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6BC2E79-9260-4CE4-A3C8-004E13D61350}|Web Project\\Web Project.csproj|c:\\users\\teja\\source\\repos\\web project\\web project\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{E6BC2E79-9260-4CE4-A3C8-004E13D61350}|Web Project\\Web Project.csproj|solutionrelative:web project\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6BC2E79-9260-4CE4-A3C8-004E13D61350}|Web Project\\Web Project.csproj|C:\\Users\\Teja\\source\\repos\\Web Project\\web project\\about.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6BC2E79-9260-4CE4-A3C8-004E13D61350}|Web Project\\Web Project.csproj|solutionrelative:web project\\about.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6BC2E79-9260-4CE4-A3C8-004E13D61350}|Web Project\\Web Project.csproj|C:\\Users\\Teja\\source\\repos\\Web Project\\web project\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{E6BC2E79-9260-4CE4-A3C8-004E13D61350}|Web Project\\Web Project.csproj|solutionrelative:web project\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "About.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Teja\\source\\repos\\Web Project\\Web Project\\About.aspx.cs",
+              "RelativeDocumentMoniker": "Web Project\\About.aspx.cs",
+              "ToolTip": "C:\\Users\\Teja\\source\\repos\\Web Project\\Web Project\\About.aspx.cs",
+              "RelativeToolTip": "Web Project\\About.aspx.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T09:51:57.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "About.aspx",
+              "DocumentMoniker": "C:\\Users\\Teja\\source\\repos\\Web Project\\Web Project\\About.aspx",
+              "RelativeDocumentMoniker": "Web Project\\About.aspx",
+              "ToolTip": "C:\\Users\\Teja\\source\\repos\\Web Project\\Web Project\\About.aspx",
+              "RelativeToolTip": "Web Project\\About.aspx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-04-16T09:51:46.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Contact.aspx",
+              "DocumentMoniker": "C:\\Users\\Teja\\source\\repos\\Web Project\\Web Project\\Contact.aspx",
+              "RelativeDocumentMoniker": "Web Project\\Contact.aspx",
+              "ToolTip": "C:\\Users\\Teja\\source\\repos\\Web Project\\Web Project\\Contact.aspx",
+              "RelativeToolTip": "Web Project\\Contact.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-04-15T13:31:53.961Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
